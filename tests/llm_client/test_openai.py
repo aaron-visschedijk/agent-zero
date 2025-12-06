@@ -134,4 +134,3 @@ class TestOpenAILLMClient:
         assert call_args.kwargs["messages"][0]["role"] == "system"
         assert call_args.kwargs["messages"][1]["role"] == "user"
         assert call_args.kwargs["messages"][2]["role"] == "assistant"
-
