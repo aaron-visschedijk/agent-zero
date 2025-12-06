@@ -3,6 +3,8 @@
 from abc import ABC, abstractmethod
 from typing import Self
 
+from pydantic import BaseModel
+
 from agent_zero.llm_client.types import ChatMessage
 
 
@@ -19,5 +21,9 @@ class LLMClientBase(ABC):
         """Create an LLM client from environment variables."""
 
     @abstractmethod
-    def chat(self, messages: list[ChatMessage]) -> str | None:
+    def chat(
+        self,
+        messages: list[ChatMessage],
+        structured_output: type[BaseModel] | None = None,
+    ) -> str | None:
         """Chat with the LLM."""
