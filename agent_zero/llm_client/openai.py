@@ -11,8 +11,8 @@ from openai.types.chat import (
     ChatCompletionUserMessageParam,
 )
 
-from llm_client.base import LLMClientBase
-from llm_client.types import ChatMessage, Role
+from agent_zero.llm_client.base import LLMClientBase
+from agent_zero.llm_client.types import ChatMessage, Role
 
 
 def _to_openai_message(message: ChatMessage) -> ChatCompletionMessageParam:
