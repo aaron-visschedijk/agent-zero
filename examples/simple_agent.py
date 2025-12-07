@@ -2,9 +2,9 @@
 
 
 from dotenv import load_dotenv
-from agent_zero.agent.agent import Agent
+from agent_zero.agent import Agent
 from agent_zero.llm_client.openai import OpenAILLMClient
-from agent_zero.tool.tool import function_tool
+from agent_zero.tool import function_tool
 
 
 load_dotenv()

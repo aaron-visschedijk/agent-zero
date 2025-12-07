@@ -5,7 +5,7 @@ from agent_zero.agent.exceptions import ToolNotAvailableError
 from agent_zero.agent.types import AgentOutput, ToolCall
 from agent_zero.llm_client.base import LLMClientBase
 from agent_zero.llm_client.types import ChatMessage, Role
-from agent_zero.tool.tool import Tool
+from agent_zero.tool import Tool
 from agent_zero.utils import try_parse_to_model
 
 
