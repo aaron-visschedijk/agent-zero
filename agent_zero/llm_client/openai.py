@@ -48,12 +48,12 @@ class OpenAILLMClient(LLMClientBase):
     def chat(
         self,
         messages: list[ChatMessage],
-        structured_output: type[BaseModel] | None = None,
+        structured_output: type[BaseModel] | type[str] = str,
     ) -> str | None:
         """Chat with the LLM."""
         openai_messages = [_to_openai_message(message) for message in messages]
         response_format: ResponseFormatJSONSchema | Omit = Omit()
-        if structured_output:
+        if issubclass(structured_output, BaseModel):
             response_format = ResponseFormatJSONSchema(
                 json_schema=JSONSchema(
                     schema=structured_output.model_json_schema(),

@@ -24,6 +24,6 @@ class LLMClientBase(ABC):
     def chat(
         self,
         messages: list[ChatMessage],
-        structured_output: type[BaseModel] | None = None,
+        structured_output: type[BaseModel] | type[str] = str,
     ) -> str | None:
         """Chat with the LLM."""

@@ -16,5 +16,5 @@ class Role(StrEnum):
 class ChatMessage(BaseModel):
     """Chat message for LLM clients."""
 
-    role: str
+    role: Role
     content: str
